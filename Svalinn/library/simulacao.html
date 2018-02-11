@@ -1,0 +1,29 @@
+{%extends "layout.html"%}
+{%block body%}
+<h1 class="nomarginbelow" style="background-color: grey; color: white; font-family: 'Unica One', Cursive;"><b>SIMULAÇÃO</b>
+</h1>
+
+<div>
+ <div class="tabs pull-left">
+    <ul class="tab-links nomarginbelow">
+        <li class="active"><a href="#tab1">PARÂMETROS</a></li>
+        <li><a href="#tab2">DESIGN</a></li>
+        <li><a href="#tab3">PLOTAR</a></li>
+    </ul>
+
+    <div class="tab-content nomarginabove">
+        <div id="tab1" class="tab active">
+            <p> As opções de plotagem relacionadas a parâmetros serão inseridas aqui.</p>
+        </div>
+
+        <div id="tab2" class="tab">
+            <p>As opções de plotagem relacionadas ao design do gráfico serão inseridas aqui.</p>
+        </div>
+
+        <div id="tab3" class="tab">
+            <p>O comando de plotar o gráfico e a imagem gerada serão inseridos aqui.</p>
+        </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

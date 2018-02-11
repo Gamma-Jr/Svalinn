@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+
+html, body {
+	background: url({{url_for('static', filename = 'wow.jpg')}}) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+header {
+  padding: 5vw;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Unica One', Cursive;
+}
+
+nav {
+  color: grey;
+  text-align: center;
+  font-size: 2vw;
+  font-family:helvetica;
+  padding: 1vw;
+  margin: 1vw;
+  text-decoration: none;
+}
+
+footer {
+  font-size: 0.75vw;
+  font-family: helvetica;
+  position: relative;
+  color: white;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+
+}
+
+
+.alignRight {
+  float: right;
+
+}
+
+
+
+</style>
+
+<head>
+<meta charset="UTF-8">
+<title>SVALINN</title>
+<meta charset="UTF-8">
+<meta name="description" content="Svalinn Project by Gamma Jr. Engenharia">
+<meta name="keywords" content="simulations, magnetosphere, space">
+<meta name="author" content="Camila Abrantes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text|Unica+One">
+</head>
+
+
+<body>
+<header>
+<center><img src="{{url_for('static', filename = 'logo-branco-menor.png')}}" alt="SVALINN" align="center" width="566vw" height="336vw"></center>
+</header>
+<nav>
+  <a href="/sobre">SOBRE</a> |
+  <a href="/simulacao">SIMULAÇÃO</a> |
+  <a href="/projeto">PROJETOS</a> |
+  <a href="/ajuda">AJUDA</a> |
+  <a href="/contato">CONTATO</a> |
+</nav>
+
+
+
+<footer>
+<span class="alignRight">Image credit: NASA</span>
+</footer>
+
+
+</body>
+
+</html>
