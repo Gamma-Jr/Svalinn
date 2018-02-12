@@ -1,10 +1,13 @@
 import sys
-sys.path.append('/Users/fortecpcjp2/kameleon/lib/python2.7/site-packages/ccmc/')
+from funcoes.config import *
+Kameleon_path = kameleon_lib_path()
+Models_path = models_path()
+sys.path.append(Kameleon_path)
 import _CCMC as ccmc
 
 
 def interpolar(modelo, variavel, x, y, z):
-	filename = str('/Users/fortecpcjp2/Documents/Testes/python/' + modelo)
+	filename = str(Models_path + modelo)
 
 	variable = str(variavel)
 
