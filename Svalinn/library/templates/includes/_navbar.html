@@ -1,12 +1,22 @@
 <div class="container">
 <nav>
  <ul>
-  <li class="pull-left"><a href="/sobre"><b>SOBRE</b></a></li>
-  <li class="pull-left"><a href="/simulacao"><b>SIMULAÇÃO</b></a></li>
-  <li class="pull-left"><a href="/projeto"><b>PROJETOS</b></a></li>
-  <li class="pull-left"><a href="/ajuda"><b>AJUDA</b></a></li>
-  <li class="pull-left"><a href="/contato"><b>CONTATO</b></a></li>
-  <li class="pull-right"><a href="/login"><b>Login</b></li></a>
+  {% if session.logged_in%}
+    <li class="pull-left"><a href="/sobre"><b>SOBRE</b></a></li>
+    <li class="pull-left"><a href="/simulacao"><b>SIMULAÇÃO</b></a></li>
+    <li class="pull-left"><a href="/dados"><b>DADOS</b></a></li>
+    <li class="pull-left"><a href="/ajuda"><b>AJUDA</b></a></li>
+    <li class="pull-left"><a href="/contato"><b>CONTATO</b></a></li>
+    <li class="pull-right"><a href="/dashboard"><b>Dashboard</b></li></a>
+    <li class="pull-right"><a href="/logout"><b>Logout</b></li></a>
+  {%else%}
+    <li class="pull-left"><a href="/sobre"><b>SOBRE</b></a></li>
+    <li class="pull-left"><a href="/ajuda"><b>AJUDA</b></a></li>
+    <li class="pull-left"><a href="/contato"><b>CONTATO</b></a></li>
+    <li class="pull-right"><a href="/login"><b>Login</b></li></a>
+    <li class="pull-right"><b>|</b></li> <!--mudar essa linha para que tenha uma barra que separe LOGIN de REGISTRAR-->
+    <li class="pull-right"><a href="/registrar"><b>Registrar</b></li></a>
+  {%endif%}
  </ul>
 </nav>
 </div>

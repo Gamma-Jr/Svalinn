@@ -1,0 +1,31 @@
+{%extends "layout.html"%}
+{%block head%}<title> DASHBOARD </title>{%endblock%}
+{%block body%}
+<div class="container">
+  <h1 class="nomarginbelow" style="background-color: grey; color: white; font-family: 'Unica One', Cursive;"><b>DASHBOARD <small> Bem vindo, {{session.username}}</small></b></h1>
+  <p class="nomarginabove" style="background-color: #ddd; color: #665;">Simulações Realizadas</p>
+<hr>
+
+<table class="table table-striped">
+  <tr>
+    <th>Título</th>
+    <th>Tipo</th>
+    <th>Dados</th>
+    <th></th>
+  </tr>
+  {%for dado in dados%}
+  <tr>
+    <td>{{dado.title}}</td>
+    <td>{{dado.type}}</td>
+    <td>{{dado.dados}}</td>
+    <td><a href="detalhes/{{dado.id}}" class="btn btn-default pull-right">Detalhes</a></td>
+  </tr>
+  {%endfor%}
+</table>
+</div>
+
+
+
+
+
+{%endblock%}
