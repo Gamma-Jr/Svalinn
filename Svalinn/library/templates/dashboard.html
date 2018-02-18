@@ -6,19 +6,20 @@
   <p class="nomarginabove" style="background-color: #ddd; color: #665;">Simulações Realizadas</p>
 <hr>
 
-<table class="table table-striped">
+<table class="table">
   <tr>
     <th>Título</th>
     <th>Tipo</th>
-    <th>Dados</th>
+    <th>Data de criação</th>
     <th></th>
+
   </tr>
   {%for dado in dados%}
   <tr>
     <td>{{dado.title}}</td>
     <td>{{dado.type}}</td>
-    <td>{{dado.dados}}</td>
-    <td><a href="detalhes/{{dado.id}}" class="btn btn-default pull-right">Detalhes</a></td>
+    <td>{{dado.create_date}}</td>
+    <td><a href="dados/{{dado.id}}" class="btn btn-default pull-right">Detalhes</a></td>
   </tr>
   {%endfor%}
 </table>

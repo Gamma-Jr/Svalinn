@@ -59,7 +59,7 @@ def simular():
     dados = request.form
     form = DataForm(request.form)
     if request.method == 'POST':
-        modelo = request.form.get('modelo')
+        modelo = str(request.form.get('modelo'))
         variavel = request.form.get('variavel')
         x = float(request.form.get('x'))
         y = float(request.form.get('y'))
@@ -68,12 +68,12 @@ def simular():
 
         title = str(session['username']+"#"+modelo+"#")
         body = request.form.get('comentario')
-        tipo = 'interpolacao'
+        tipo = 'Interpolacao'
         dados = str(var)
         cur = mysql.connection.cursor()
 
 
-        cur.execute("INSERT INTO dados(title, body, user, type, dados) VALUES (%s, %s, %s, %s, %s)", (title, body, session['username'], tipo, dados))
+        cur.execute("INSERT INTO dados(title, body, user, type, dados, modelo) VALUES (%s, %s, %s, %s, %s, %s)", (title, body, session['username'], tipo, dados, modelo))
 
         mysql.connection.commit()
 
@@ -87,9 +87,11 @@ def simular():
 @app.route('/dados')
 @is_logged_in
 def dados():
+    username = session['username']
+
     cur = mysql.connection.cursor()
 
-    result = cur.execute("SELECT * FROM dados")
+    result = cur.execute("SELECT * FROM dados WHERE user = %s", [username])
 
     dados = cur.fetchall()
 
@@ -145,6 +147,7 @@ def login():
     return render_template('login.html')
 
 @app.route('/dados/<string:id>/')
+@is_logged_in
 def dado(id):
     cur = mysql.connection.cursor()
 
@@ -164,9 +167,11 @@ def logout():
 @app.route('/dashboard')
 @is_logged_in
 def dashboard():
+    username = session['username']
+
     cur = mysql.connection.cursor()
 
-    result = cur.execute("SELECT * FROM dados")
+    result = cur.execute("SELECT * FROM dados WHERE user = %s", [username])
 
     dados = cur.fetchall()
 

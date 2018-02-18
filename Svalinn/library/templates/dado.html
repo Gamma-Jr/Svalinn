@@ -1,7 +1,18 @@
+
 {%extends "layout.html"%}
 {%block head%}
-<title>Dado</title>
+<title>Dados de {{dado.user}}</title>
 {%endblock%}
 {%block body%}
-<h1>{{dado.title}}</h1>
+<div>
+<h1 class="nomarginbelow" style="background-color: grey; color: white; font-family: 'Unica One', Cursive;"><b>DADOS</b></h1>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Titulo: {{dado.title}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">ID: {{dado.id}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Modelo: {{dado.modelo}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Tipo: {{dado.type}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Comentário: {{dado.body}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Data de criação: {{dado.create_date}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Valor obtido: {{dado.dados}}</p>
+<p class="nomarginabove" style="background-color: #ddd; color: #665;">Representações gráficas: {{dado.IMAGE}}</p>
+</div>
 {%endblock%}

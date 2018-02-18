@@ -5,8 +5,9 @@
 {%block body%}
 <h1 class="nomarginbelow" style="background-color: grey; color: white; font-family: 'Unica One', Cursive;"><b>DADOS</b></h1>
 <p class="nomarginabove" style="background-color: #ddd; color: #665;">Aqui colocaremos os projetos e eventos já simulados, como um banco de dados. (?)</p>
-
+<div>
 {% for dado in dados %}
-  <h1><a href="/dados/{{dado.id}}/">{{dado.title}}</h1></a>
+  <p class="nomarginabove" style="background-color: #ddd; color: #665;"><a href="/dados/{{dado.id}}/">{{dado.title}}</a></p>
 {%endfor%}
+</div>
 {%endblock%}

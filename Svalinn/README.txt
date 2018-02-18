@@ -27,8 +27,31 @@ def models_path():
     models_path = 'path/to/models'
     return models_path
 
-Futuramente será implementado um banco de dado para que o usuário possa configurar os caminhos aos modelos e ao modulo _CCMC.so através da própria interface.
+Atualmente o banco de dados está implementado em MySQL e configurado no arquivo app.py, indicado por #Config MySQL. No momento há de ser criado duas tabelas dentro de um Databank: users e dados
 
+- users: Banco de dados de registro de usuários. Nele contém as colunas:
+	- id: INT(11), PRIMARYKEY, AUTO_INCREMENT
+	- name: VARCHAR(100), NULL
+	- email: VARCHAR(100), NULL
+	- username: VARCHAR(30), NULL
+	- password: VARCHAR(100), NULL
+	- register_date: TIMESTAMP, NOT NULL, CURRENT_TIMESTAMP
+
+- dados: Banco de dados de registros de simulações. Nele contém as colunas:
+	- id: INT(11), NOT NULL, PRIMARYKEY, AUTO_INCREMENT
+	- title: VARCHAR(255), NULL
+	- type: VARCHAR(100), NULL
+	- user: VARCHAR(100), NULL
+	- body: TEXT, NULL
+	- create_date: TIMESTAMP, NOT NULL, CURRENT_TIMESTAMP
+	- dados: TEXT, NULL
+	- modelo: VARCHAR(50), NULL
+	- IMAGE: blob, NULL
+
+A configuração de nome de usuário e senha devem ser feitas nas máquinas e então configuradas em app.py. Para a criação da tabela dados, entrar o comando:
+CREATE TABLE dados (id INT(11) AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), type VARCHAR(100), user VARCHAR(100), body TEXT, create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, dados TEXT, modelo VARCHAR(50), IMAGE BLOB);
+Para a criação da tabela users: 
+CREATE TABLE dados (id INT(11) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100), username VARCHAR(30), password VARCHAR(100), register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 ——————————————————————————————————————————————————————————————————
 
 Gamma Jr. Engenharia
